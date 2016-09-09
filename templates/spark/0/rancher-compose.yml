@@ -1,0 +1,47 @@
+.catalog:
+  name: spark
+  version: 1.0.0
+  description: |
+    (Experimental) Spark cluster
+  questions:
+    - variable: "slave_scale"
+      description: "部署集群从节点数，默认为3"
+      label: "从节点数"
+      required: true
+      default: 3
+      type: "int"
+    - variable: "host_label" 
+      description: "部署集群主节点于哪台主机上，请先设置主机标签" 
+      label: "主节点的主机标签"
+      required: true
+      default: "hostname=host1"
+      type: "string"
+    - variable: "ui_port"
+      description: "UI 端口"
+      label: "UI 端口"
+      required: true
+      default: 8080
+      type: "int"
+    - variable: "restful_port"
+      description: "restful 端口"
+      label: "restful 端口"
+      required: true
+      default: 6066
+      type: "int"
+    - variable: "spark_port"
+      description: "spark 端口"
+      label: "spark 端口"
+      required: true
+      default: 7077
+      type: "int"
+    - variable: "sshd_port"
+      description: "ssh登录主节点的端口号"
+      label: "主节点sshd 端口"
+      required: true
+      default: 8022
+      type: "int"
+
+slaves:
+  scale: ${slave_scale}
+master:
+  scale: 1

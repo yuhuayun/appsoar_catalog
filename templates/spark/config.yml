@@ -1,0 +1,6 @@
+name: Apache Spark
+description: |
+  spark集群(试验)
+version: 1.0.0
+category: 大数据
+maintainer: "有容云"
